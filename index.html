@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light / Dark Mode</title>
+  <style>
+    body {
+      background-color: #eee;
+      transition: all 0.5s;
+    }
+
+    button {
+      font-size: 3em;
+      padding: 0.2em;
+      background-color: #fff;
+    }
+  </style>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/serviceworker.js')
+        .then(function (registration) {
+          // console.log('Success!', registration.scope);
+        })
+        .catch(function (error) {
+          // console.error('Failure!', error);
+        });
+      console.log('All done.');
+    }
+  </script>
+</head>
+
+<body>
+  <button id="light">light</button>
+  <button id="dark">dark</button>
+  <script src="interactions.js"></script>
+</body>
+
+</html>
